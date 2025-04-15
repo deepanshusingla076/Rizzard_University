@@ -24,6 +24,10 @@ A modern educational website for Rizzard University, showcasing courses, program
 - About
 - Blog
 - Contact
+- Event
+- FAQ's
+- Review
+- Our Team
 
 ## How to Run Locally
 
