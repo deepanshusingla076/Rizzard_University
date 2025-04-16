@@ -33,8 +33,8 @@ app.get('/', (req, res) => {
     res.render('login');
 })
 
-app.get('/dashboard', (req, res) => {
-    res.render('dashboard', { currentPage: 'home' });
+app.get('/index', (req, res) => {
+    res.render('index', { currentPage: 'home' });
 })
 
 app.get('/register', (req, res) => {
