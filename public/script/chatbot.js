@@ -31,6 +31,7 @@ async function sendMessage() {
     addMessage("Thinking...", 'bot', loadingId);
 
     try {
+<<<<<<< HEAD
         const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBsVP5yM0r1BbMu_yu4vgA8gLGVGaCEw9Y", {
             method: "POST",
             headers: {
@@ -40,6 +41,18 @@ async function sendMessage() {
                 contents: [{
                     parts: [{ text: message }]
                 }]
+=======
+        const response = await fetch("https://grok-3-0-ai.p.rapidapi.com/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "x-rapidapi-host": "grok-3-0-ai.p.rapidapi.com",
+                "x-rapidapi-key": "9e4b42b01emsh217d7238d693e10p1a1b6bjsn7f96acee788f"
+            },
+            body: JSON.stringify({
+                model: "grok-3",
+                messages: [{ role: "user", content: message }]
+>>>>>>> fd19789a6af9dfff622dee21a2593e52e89d5999
             })
         });
 
@@ -52,10 +65,16 @@ async function sendMessage() {
  
         removeMessage(loadingId);
 
+<<<<<<< HEAD
 
         if (data && data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
             const responseText = data.candidates[0].content.parts[0].text;
             addMessage(responseText, 'bot');
+=======
+        // Process Grok API response format
+        if (data && data.choices && data.choices[0] && data.choices[0].message) {
+            addMessage(data.choices[0].message.content, 'bot');
+>>>>>>> fd19789a6af9dfff622dee21a2593e52e89d5999
         } else {
             addMessage("Error: Unexpected response format from AI service.", 'bot');
         }

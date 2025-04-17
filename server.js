@@ -33,8 +33,13 @@ app.get('/', (req, res) => {
     res.render('login');
 })
 
+<<<<<<< HEAD
 app.get('/dashboard', (req, res) => {
     res.render('dashboard', { currentPage: 'home' });
+=======
+app.get('/index', (req, res) => {
+    res.render('index', { currentPage: 'home' });
+>>>>>>> fd19789a6af9dfff622dee21a2593e52e89d5999
 })
 
 app.get('/register', (req, res) => {
@@ -80,4 +85,8 @@ app.get('/form', (req, res) => {
 app.use(errorHandler)
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> fd19789a6af9dfff622dee21a2593e52e89d5999
